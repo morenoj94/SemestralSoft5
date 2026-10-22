@@ -1,0 +1,469 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #12181F; 
+    color: #D5D5D5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+header {
+    height: 12%;
+    background-color: #1A232E;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #656565;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.logo-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #2A3646;
+    border-radius: 40%;
+    border: 1px solid #656565;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #C0FF6B;
+}
+.auth-buttons button {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #656565;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.btn-login {
+    background-color: #2A3646;
+    color: #D5D5D5;
+}
+.btn-register {
+    background-color: #C0FF6B;
+    color: #000000;
+    border-color: #C0FF6B;
+}
+.btn-login:hover {
+    background-color: #12181e6f;
+}
+.btn-register:hover {
+    background-color: #d5f1af;
+}
+
+nav {
+    background-color: #151D27;
+    padding: 10px 30px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #656565;
+}
+nav a {
+    color: #D5D5D5;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a.active, nav a:hover {
+    background-color: #2A3646;
+    color: #C0FF6B;
+}
+
+
+/* ==========================================
+   ESTILOS PARA LA PÁGINA PRINCIPAL
+   ========================================== */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 25px 30px;
+    flex: 1;
+}
+.full-width {
+    grid-column: span 2;
+}
+.card-horizontal {
+    background-color: #1A232E;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #656565;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex: 1;
+    min-width: 0;
+}
+.card-img-square {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #656565;
+    flex-shrink: 0;
+}
+.card {
+    background-color: #1A232E;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #656565;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-img {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
+    display: block;
+    border: 1px solid #656565;
+}
+.card h3, .card-horizontal h3 {
+    color: #C0FF6B;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+.card p, .card-horizontal p {
+    color: #D5D5D5;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+.card a, .card-horizontal a {
+    color: #C0FF6B;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+.card a:hover, .card-horizontal a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   ESTILOS PARA LA PÁGINA DE ARTÍCULOS
+   ========================================== */
+main.articles-grid {
+    grid-template-columns: 260px 2fr 1.1fr;
+    align-items: start;
+}
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.category-list {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.category-list li {
+    width: 100%;
+}
+.category-btn {
+    width: 100%;
+    text-align: left;
+    background-color: #222C38;
+    color: #D5D5D5;
+    border: 1px solid #2A3646;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.category-btn:hover,
+.category-btn.active {
+    background-color: #2A3646;
+    color: #C0FF6B;
+    border-color: #C0FF6B;
+}
+.article-selected img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #656565;
+}
+.article-selected h2 {
+    color: #C0FF6B;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+.article-selected h3 {
+    color: #C0FF6B;
+    margin: 20px 0 10px 0;
+    font-size: 1.15rem;
+}
+.article-selected h4 {
+    color: #D5D5D5;
+    margin: 15px 0 8px 0;
+    font-size: 1rem;
+}
+.article-selected p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+.article-selected ul {
+    margin: 10px 0 15px 20px;
+    line-height: 1.6;
+}
+.article-selected ul li {
+    margin-bottom: 6px;
+}
+.hidden {
+    display: none;
+}
+.article-selected pre {
+    background-color: #12181F;
+    border: 1px solid #656565;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-x: auto;
+    margin: 15px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.article-selected code {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    color: #C0FF6B;
+    font-size: 0.88rem;
+}
+.btn-toggle-article {
+    background-color: transparent;
+    color: #C0FF6B;
+    border: 1px solid #C0FF6B;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+.btn-toggle-article:hover {
+    background-color: #C0FF6B;
+    color: #000000;
+}
+.btn-add {
+    background-color: #C0FF6B; /* Fondo verde brillante */
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-add:hover {
+    background-color: #d5f1af;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden; /* Mantiene los bordes redondeados en el thead */
+}
+thead {
+    background-color: #12181F;
+    border-bottom: 2px solid #C0FF6B;
+}
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #2A3646;
+    font-size: 0.9rem;
+}
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.article-link {
+    color: #D5D5D5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.article-link:hover {
+    color: #C0FF6B;
+    text-decoration: underline;
+}
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.tag-food { background-color: #3b2d1d; color: #ff9d42; border: 1px solid #ff9d42; }
+.tag-ai   { background-color: #1d333b; color: #42d4ff; border: 1px solid #42d4ff; }
+.tag-code { background-color: #1d3b25; color: #42ff7b; border: 1px solid #42ff7b; }
+.tag-tips { background-color: #381d3b; color: #e342ff; border: 1px solid #e342ff; }
+
+   /* ==========================================
+   ESTILOS PARA LA PÁGINA DE CONTACTO
+   ========================================== */
+main.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 30px;
+}
+.contact-card {
+    background-color: #1A232E;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #656565;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 900px;
+}
+.contact-card h2 {
+    color: #D5D5D5;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #656565;
+    padding-bottom: 10px;
+}
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form-group label {
+    color: #D5D5D5;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: #222D3D;
+    border: 1px solid #656565;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #D5D5D5;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #C0FF6B;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-group select {
+    cursor: pointer;
+}
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.btn-submit {
+    background-color: #BDC8D3;
+    color: #000000;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-submit:hover {
+    background-color: #C0FF6B;
+}
+
+
+   /* ==========================================
+   ESTILOS PARA LA PÁGINA DE FOOTER
+   ========================================== */
+
+footer {
+    background-color: #1A232E;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #656565;
+    font-size: 0.9rem;
+    color: #D5D5D5;
+}
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+footer a {
+    color: #D5D5D5;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+footer a:hover {
+    color: #C0FF6B;
+}
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+}

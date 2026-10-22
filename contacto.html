@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>El Prompt lo hizo</title>
+  </head>
+  
+  <body>
+     <!-- Header -->
+    <header>
+      <a href="index.html" class="logo-container">
+        <div class="logo-circle">
+          <img src="img/logo.png" alt="Logo de la web">
+        </div>
+        <span class="logo-text">El Prompt lo hizo</span>
+      </a>
+      <div class="auth-buttons">
+        <button class="btn-login" href=#">Iniciar sesión</button>
+        <button class="btn-register" href=#">Registrarse</button>
+      </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+
+    <main class="contact-page">
+      <div class="contact-card">
+        <h2>Contacto</h2>
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre completo <span class="required-text">(Obligatorio)</span></label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="motivo">Motivo de contacto <span class="required-text">(Obligatorio)</span></label>
+            <select id="motivo" name="motivo" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="registro">Solicitar registro</option>
+              <option value="soporte">Soporte técnico</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="general">Consulta general</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="correo">Correo <span class="required-text">(Obligatorio)</span></label>
+            <input type="email" id="correo" name="correo" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mensaje">Mensaje <span class="required-text">(Obligatorio)</span></label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">
+        <div class="logo-circle">
+          <img src="img/logo.png" alt="Logo de la web" width="70" style="border-radius: 40%;">
+        </div>
+        <span class="logo-text">El Prompt lo hizo</span>
+      </div>
+      <div>
+        <a href="index.html">Inicio</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <!-- Información de derechos -->
+      <p>&copy; 2026 Prompt Lo Hizo. Todos los derechos reservados.</p>
+
+    </footer>
+  </body>
+</html>

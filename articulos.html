@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>El Prompt lo hizo</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo-container">
+      <div class="logo-circle">
+        <img src="img/logo.png" alt="Logo de la web">
+      </div>
+      <span class="logo-text">El Prompt lo hizo</span>
+    </a>
+    <div class="auth-buttons">
+      <button class="btn-login" href=#">Iniciar sesión</button>
+      <button class="btn-register" href=#">Registrarse</button>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="articulos.html" class="active">Artículos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+    <main class="articles-grid">
+
+    <!--seccion 1 categrias -->
+    <section class="card">
+      <div class="card-header-flex">
+        <h3>Categorías</h3>
+      </div>
+      <ul class="category-list">
+        <li><button type="button" class="category-btn" data-category="codigo">Código y Snippets</button></li>
+        <li><button type="button" class="category-btn" data-category="prompts">Prompts de IA</button></li>
+        <li><button type="button" class="category-btn" data-category="recetas">Recetas Exprés</button></li>
+        <li><button type="button" class="category-btn" data-category="estudio">Lugares de Estudio</button></li>
+        <li><button type="button" class="category-btn" data-category="empleo">Ofertas de Empleo</button></li> 
+      </ul>
+    </section>
+
+
+    <!-- Zona central: descripción del artículo -->
+    <section class="card article-selected">
+      <div class="card-header-flex">
+        <h3>Artículo Seleccionado</h3>
+      </div>
+
+      <img src="https://www.eraneos.com/wp-content/smush-webp/2025/06/sql-1.jpg.webp" alt="Optimización de consultas SQL en Oracle APEX">
+      <h2>Optimización de SQL en Oracle APEX: Mejora el Rendimiento de tus Consultas</h2>
+
+      <!-- Vista previa / Resumen visible -->
+      <p class="article-summary">
+        ¿Tus informes en Oracle APEX tardan demasiado en cargar? Aprende a utilizar un prompt especializado para analizar consultas SQL, detectar posibles cuellos de botella y encontrar oportunidades de optimización.
+      </p>
+
+      <!-- Contenido completo (oculto inicialmente) -->
+      <div class="article-full-content hidden">
+        <p>Cuando desarrollas aplicaciones en Oracle APEX, es común trabajar con consultas SQL para mostrar información, generar reportes o calcular resultados a partir de diferentes tablas. Sin embargo, una consulta que funciona correctamente no necesariamente es una consulta eficiente.</p>
+
+        <p>A medida que aumenta la cantidad de registros en la base de datos, algunas operaciones pueden comenzar a tardar más de lo esperado. Consultas con filtros poco eficientes, subconsultas innecesarias o una mala utilización de los índices pueden afectar el rendimiento de toda la aplicación.</p>
+
+        <p>Cuando le pides ayuda a la inteligencia artificial para optimizar SQL, muchas veces recibes recomendaciones generales o cambios que no necesariamente mejoran la ejecución. Para evitar esto, puedes utilizar un prompt estructurado que le indique al modelo cómo analizar tu consulta, identificar posibles problemas y proponer mejoras sin alterar los resultados que necesitas obtener.</p>
+
+        <h3>⏱️ Ficha Técnica</h3>
+        <ul>
+          <li><strong>Tema:</strong> Oracle SQL / Oracle APEX / Optimización de consultas con IA</li>
+          <li><strong>Nivel:</strong> Intermedio / Universitario</li>
+          <li><strong>Utilidad:</strong> Reduce tiempos de ejecución, identifica consultas ineficientes y mejora el rendimiento de las aplicaciones desarrolladas en Oracle APEX.</li>
+        </ul>
+
+        <h3>📋 El Prompt (Copia y Pega)</h3>
+        <p>Copia el siguiente prompt y reemplaza los bloques indicados con la información de tu proyecto:</p>
+        
+        <pre><code>Actúa como un Desarrollador Senior especializado en Oracle Database, Oracle SQL y Oracle APEX, con experiencia en optimización de consultas y análisis de planes de ejecución.
+
+    Tengo la siguiente consulta SQL que utilizo en una aplicación desarrollada en Oracle APEX:
+    [INSERTA TU CONSULTA SQL AQUÍ]
+
+    La consulta se utiliza para: [Describe qué información necesitas obtener y dónde se utiliza dentro de Oracle APEX].
+    Las tablas involucradas son: [Indica los nombres de las tablas, sus relaciones y las columnas relevantes].
+    El problema de rendimiento que observo es: [Describe si la consulta tarda demasiado, devuelve demasiados registros o presenta otro comportamiento].
+
+    Si dispongo de ellos, también proporcionaré los siguientes datos:
+    - Cantidad aproximada de registros por tabla.
+    - Índices existentes y claves primarias o foráneas.
+    - Plan de ejecución de la consulta.
+    - Versión de Oracle Database.
+    - Resultado esperado de la consulta.
+
+    Por favor, realiza lo siguiente:
+    1. Análisis de la Consulta: Examina la estructura del SQL e identifica posibles problemas, como filtros poco selectivos, subconsultas innecesarias, conversiones implícitas de tipos, operaciones costosas o condiciones que dificulten el uso de índices.
+    2. Consulta Optimizada: Propón una versión mejorada de la consulta, conservando la lógica original y los resultados esperados. No elimines condiciones ni cambies las relaciones entre tablas sin justificarlo.
+    3. Explicación de los Cambios: Explica qué modificaste, por qué podría mejorar el rendimiento y qué ventajas ofrece frente a la consulta original.
+    4. Análisis de Índices: Indica si sería conveniente crear, modificar o aprovechar algún índice. Antes de recomendar uno, considera los índices existentes, la selectividad de las columnas y el costo adicional que los índices pueden representar en las operaciones de escritura.
+    5. Plan de Ejecución: Explica cómo revisar el plan de ejecución para identificar operaciones costosas y comprobar si la optimización propuesta realmente mejora la consulta.
+    6. Compatibilidad con Oracle APEX: Si la consulta se utiliza en un informe interactivo, un informe clásico, un gráfico o un proceso PL/SQL, señala cualquier consideración específica para ese contexto.
+    7. Validación de Resultados: Indica cómo comprobar que la consulta optimizada devuelve los mismos resultados que la original.
+
+    Importante:
+    - No inventes estadísticas, índices ni resultados de ejecución.
+    - Si falta información para llegar a una conclusión, indica qué datos necesitas.
+    - Diferencia entre una mejora potencial y una mejora comprobada mediante mediciones.
+    - Prioriza soluciones sencillas y mantenibles antes de proponer cambios complejos.</code></pre>
+
+        <h3>💡 Ejemplo Práctico de Uso</h3>
+        <p>Imagina que estás desarrollando un sistema académico en Oracle APEX y necesitas consultar los estudiantes junto con sus calificaciones. La aplicación funciona correctamente, pero el informe tarda demasiado en cargar.</p>
+
+        <p>Una consulta inicial podría ser la siguiente:</p>
+        <pre><code>SELECT
+        e.id_estudiante,
+        e.nombre,
+        e.apellido,
+        (
+            SELECT AVG(n.calificacion)
+            FROM notas n
+            WHERE n.id_estudiante = e.id_estudiante
+        ) AS promedio
+    FROM estudiantes e
+    WHERE e.estado = 'ACTIVO';</code></pre>
+
+        <p>Esta consulta obtiene los estudiantes activos y calcula el promedio de sus calificaciones mediante una subconsulta correlacionada.</p>
+        <p>La consulta no es necesariamente ineficiente: su rendimiento dependerá de la cantidad de registros, los índices disponibles y el plan de ejecución. Sin embargo, si se procesan muchos estudiantes, conviene evaluar si una agregación previa resulta más eficiente.</p>
+
+        <p>Una alternativa que se puede probar es:</p>
+        <pre><code>SELECT
+        e.id_estudiante,
+        e.nombre,
+        e.apellido,
+        n.promedio
+    FROM estudiantes e
+    LEFT JOIN (
+        SELECT
+            id_estudiante,
+            AVG(calificacion) AS promedio
+        FROM notas
+        GROUP BY id_estudiante
+    ) n
+        ON n.id_estudiante = e.id_estudiante
+    WHERE e.estado = 'ACTIVO';</code></pre>
+
+        <p>Esta versión calcula los promedios agrupando las notas por estudiante y luego relaciona esos resultados con los estudiantes activos. El uso de LEFT JOIN permite conservar a los estudiantes que todavía no tienen calificaciones, mostrando NULL en el promedio.</p>
+
+        <h4>¿Qué se obtiene al utilizar el prompt?</h4>
+        <ul>
+          <li><strong>Diagnóstico orientado al rendimiento:</strong> La IA puede señalar qué partes de la consulta conviene investigar y qué información adicional necesita para evaluar su costo.</li>
+          <li><strong>Propuesta de mejora:</strong> Puede comparar la subconsulta correlacionada con la agregación previa y explicar en qué escenarios podría convenir cada alternativa.</li>
+          <li><strong>Recomendación de índices:</strong> Puede sugerir revisar los índices de las columnas utilizadas en las condiciones de búsqueda y en las relaciones entre tablas, sin asumir que crear más índices siempre será mejor.</li>
+          <li><strong>Validación técnica:</strong> Te orientará para comparar los planes de ejecución y los tiempos reales de ambas consultas antes de decidir cuál utilizar.</li>
+        </ul>
+
+        <p>Es importante recordar que una consulta más corta o con menos subconsultas no es automáticamente más rápida. La diferencia debe comprobarse con datos representativos y resultados equivalentes.</p>
+
+        <h3>🛠️ Tip Pro para Optimizar Consultas en Oracle APEX</h3>
+        <p>Una de las herramientas más útiles para este trabajo es el plan de ejecución de Oracle Database, que permite analizar cómo el optimizador pretende ejecutar una consulta.</p>
+
+        <p>Puedes comenzar revisando estos aspectos:</p>
+        <ul>
+          <li><strong>Índices:</strong> Comprueba si existen índices útiles para las columnas utilizadas en filtros y relaciones.</li>
+          <li><strong>Filtros (WHERE):</strong> Evita aplicar funciones o conversiones innecesarias sobre columnas cuando puedan impedir el aprovechamiento de un índice.</li>
+          <li><strong>Agregaciones (GROUP BY):</strong> Evalúa si puedes reducir la cantidad de datos procesados antes de realizar otras operaciones.</li>
+          <li><strong>Estadísticas:</strong> Considera si las estadísticas del optimizador están actualizadas, especialmente cuando cambia considerablemente el volumen de datos.</li>
+          <li><strong>Mediciones reales:</strong> Compara el tiempo de ejecución, las filas procesadas y el consumo de recursos cuando tengas acceso a esas métricas.</li>
+        </ul>
+
+        <p>En Oracle APEX también puedes utilizar las herramientas de desarrollo disponibles en tu entorno para inspeccionar consultas y revisar su comportamiento. La disponibilidad de algunas funciones dependerá de tu versión de APEX, los permisos de tu usuario y la configuración de Oracle Database.</p>
+
+        <p>Por último, evita modificar una consulta únicamente porque la inteligencia artificial propone una alternativa diferente. Primero comprueba que ambas consultas produzcan los mismos resultados y después evalúa si la nueva versión representa una mejora real.</p>
+      </div>
+
+      <button type="button" class="btn-toggle-article">Leer artículo completo ↓</button>
+    </section>
+
+      
+    <!--Tabla de contenido-->
+    <section class="card">
+      <div class="card-header-flex">
+        <h3>Lista de Artículos</h3>
+        <button class="btn-add">+ Agregar artículo</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#" class="article-link">Cena universitaria en 5 min</a></td>
+            <td><span class="tag tag-food">Receta</span></td>
+            <td>Hace 2h</td>
+          </tr>
+          <tr>
+            <td><a href="#" class="article-link">Prompt para Debugging C++</a></td>
+            <td><span class="tag tag-ai">IA</span></td>
+            <td>Hace 5h</td>
+          </tr>
+          <tr>
+            <td><a href="#" class="article-link">Conexión JasperReports & Java</a></td>
+            <td><span class="tag tag-code">Código</span></td>
+            <td>Ayer</td>
+          </tr>
+          <tr>
+            <td><a href="#" class="article-link">Salas con Wi-Fi nocturno</a></td>
+            <td><span class="tag tag-tips">Tips</span></td>
+            <td>Hace 2 días</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">
+        <div class="logo-circle">
+          <img src="img/logo.png" alt="Logo de la web" width="70" style="border-radius: 40%;">
+        </div>
+        <span class="logo-text">El Prompt lo hizo</span>
+      </div>
+      <div>
+        <a href="index.html">Inicio</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <!-- Información de derechos -->
+      <p>&copy; 2026 Prompt Lo Hizo. Todos los derechos reservados.</p>
+
+    </footer>
+  </body>
+</html>
