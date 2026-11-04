@@ -183,9 +183,27 @@ main {
    ESTILOS PARA LA PÁGINA DE ARTÍCULOS
    ========================================== */
 main.articles-grid {
-    grid-template-columns: 260px 2fr 1.1fr;
+    grid-template-columns: minmax(180px, 260px) minmax(0, 2fr) minmax(220px, 1fr);
     align-items: start;
 }
+
+main.articles-grid > .card {
+    min-width: 0;
+}
+
+.article-selected {
+    min-width: 0;
+}
+
+.article-selected img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}   
+
+
 .card-header-flex {
     display: flex;
     justify-content: space-between;
@@ -459,11 +477,259 @@ footer a {
 footer a:hover {
     color: #C0FF6B;
 }
+
+
+
+/* ==========================================
+   TABLETS
+   ========================================== */
 @media (max-width: 900px) {
+
+    /* Contenido principal */
     main {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
+
     .full-width {
         grid-column: span 1;
+    }
+
+    /* Página de artículos */
+    main.articles-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        gap: 15px;
+    }
+
+    /* La tercera tarjeta pasa debajo de las otras dos */
+    main.articles-grid > section:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .article-selected {
+        min-width: 0;
+    }
+
+    /* Presentación */
+    .card-horizontal {
+        gap: 15px;
+    }
+
+    .card-img-square {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Imágenes */
+    .card-img {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    /* Header */
+    header {
+        height: auto;
+        padding: 15px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-circle {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .auth-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .auth-buttons button {
+        flex: 1;
+        margin: 0;
+        padding: 10px 8px;
+    }
+
+    /* Navegación */
+    nav {
+        padding: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Contenido principal */
+    main {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    /* Presentación */
+    .card-horizontal {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .card-content {
+        width: 100%;
+    }
+
+    .card-img-square {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Tarjetas */
+    .card {
+        padding: 15px;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+    .card h3,
+    .card-horizontal h3 {
+        font-size: 1rem;
+    }
+
+    .card p,
+    .card-horizontal p {
+        font-size: 0.9rem;
+    }
+
+    /* Página de artículos */
+    main.articles-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    main.articles-grid > section {
+        grid-column: 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Categorías */
+    .category-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .category-btn {
+        height: 100%;
+        min-height: 48px;
+        padding: 10px 6px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    /* Artículo */
+    .article-selected {
+        padding: 15px;
+    }
+
+    .article-selected h2 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .article-selected p,
+    .article-selected li {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .article-selected img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Bloques de código */
+    .article-selected pre {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: pre;
+        word-break: normal;
+    }
+
+    /* Lista de artículos */
+    .card-header-flex {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Página de contacto */
+    main.contact-page {
+        padding: 20px 15px;
+    }
+
+    .contact-card {
+        padding: 20px 15px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-actions {
+        grid-column: span 1;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+
+    /* Tablas */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    footer a {
+        margin: 0 5px;
+        display: inline-block;
+        padding: 5px;
     }
 }
