@@ -48,7 +48,23 @@ header {
     font-size: 1.2rem;
     color: #C0FF6B;
 }
-.auth-buttons button {
+.login-form {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+.login-form input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #656565;
+    font-size: 0.9rem;
+    width: 160px;
+}
+.login-form.active {
+    display: flex;
+}
+.auth-buttons button,
+.auth-buttons a {
     padding: 8px 18px;
     border-radius: 20px;
     border: 1px solid #656565;
@@ -63,6 +79,10 @@ header {
     color: #D5D5D5;
 }
 .btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background-color: #C0FF6B;
     color: #000000;
     border-color: #C0FF6B;
@@ -73,7 +93,6 @@ header {
 .btn-register:hover {
     background-color: #d5f1af;
 }
-
 nav {
     background-color: #151D27;
     padding: 10px 30px;
@@ -562,6 +581,31 @@ footer a:hover {
         margin: 0;
         padding: 10px 8px;
     }
+
+    /* Formulario de inicio de sesión en celulares */
+.auth-buttons {
+    flex-wrap: wrap;
+}
+
+.login-form.active {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+}
+
+.login-form input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    grid-column: span 2;
+    width: 100%;
+    margin: 0;
+}
 
     /* Navegación */
     nav {
